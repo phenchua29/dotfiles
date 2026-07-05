@@ -20,7 +20,8 @@ return {
 					.. "-E .venv "
 					.. "-E .next "
 					.. "-E .history "
-					.. "-E android",
+					.. "-E android "
+					.. "-E .obsidian",
 			},
 			grep = {
 				rg_blob = true,
@@ -37,6 +38,7 @@ return {
 					.. "--glob '!.next/*' "
 					.. "--glob '!.history/*' "
 					.. "--glob '!android/*' "
+					.. "--glob '!.obsidian/*' "
 					.. "-e",
 			},
 		},

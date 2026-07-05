@@ -28,6 +28,9 @@ return {
 							preview_cutoff = 1,
 						},
 					},
+					file_ignore_patterns = {
+						"%.obsidian/",
+					},
 				},
 				pickers = {
 					find_files = {
@@ -39,6 +42,7 @@ return {
 							"^.history",
 							"^android",
 							"^build",
+							"%.obsidian/",
 						},
 						hidden = true,
 						no_ignore = true,
