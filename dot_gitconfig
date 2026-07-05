@@ -14,3 +14,7 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[alias]
+	pf = push --force-with-lease --force-if-includes
+[init]
+	defaultBranch = main

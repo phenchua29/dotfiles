@@ -105,6 +105,13 @@ set_path "$HOME/.local/share/nvim/mason/bin"
 set_path "/opt/mssql/bin"
 set_path "/opt/mssql-tools/bin/"
 
+. "$HOME/.local/share/../bin/env"
+
+# Mise
+eval "$(mise activate bash)"
+eval "$(/usr/bin/mise activate bash)"
+export PATH="$PATH:$HOME/.dotnet/tools"
+
 # Direnv
 eval "$(direnv hook bash)"
 
