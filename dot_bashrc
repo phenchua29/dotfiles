@@ -67,10 +67,10 @@ export EDITOR="nvim"
 export GIT_EDITOR="nvim"
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+export PNPM_HOME="/home/phenchua/.local/share/pnpm"
 case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
 
@@ -128,6 +128,11 @@ eval "$(direnv hook bash)"
 
 # Added by codebase-memory-mcp install
 export PATH="/home/phenchua/.local/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/phenchua/.lmstudio/bin"
+# End of LM Studio CLI section
+
 # Go installs
 set_path "/home/phenchua/.local/share/mise/installs/go/1.26.2/bin"
 set_path "$(go env GOPATH)/bin"
