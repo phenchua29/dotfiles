@@ -120,3 +120,7 @@ eval "$(direnv hook bash)"
   ! ${BASH_COMPLETION_VERSINFO:-} &&
   -f /usr/share/bash-completion/bash_completion ]] &&
     . /usr/share/bash-completion/bash_completion
+
+# Go installs
+set_path "/home/phenchua/.local/share/mise/installs/go/1.26.2/bin"
+set_path "$(go env GOPATH)/bin"
