@@ -117,4 +117,12 @@
     "light": "Ayu Light",
     "dark": "Ayu Dark",
   },
+  "context_servers": {
+    "codebase-memory-mcp": {
+      "command": "/home/phenchua/.local/bin/codebase-memory-mcp",
+      "args": [
+        ""
+      ],
+    },
+  },
 }
