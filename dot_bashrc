@@ -41,6 +41,11 @@ alias c=chezmoi
 # Copy
 alias copy=wl-copy
 
+za() {
+  local session=$(zellij ls -s | fzf) || return
+  [ -n "$session" ] && zellij attach "$session"
+}
+
 # ===== PATHS =====
 
 # Android sdk paths for emulator
