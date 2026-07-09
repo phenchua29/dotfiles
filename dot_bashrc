@@ -126,6 +126,8 @@ eval "$(direnv hook bash)"
   -f /usr/share/bash-completion/bash_completion ]] &&
     . /usr/share/bash-completion/bash_completion
 
+# Added by codebase-memory-mcp install
+export PATH="/home/phenchua/.local/bin:$PATH"
 # Go installs
 set_path "/home/phenchua/.local/share/mise/installs/go/1.26.2/bin"
 set_path "$(go env GOPATH)/bin"
