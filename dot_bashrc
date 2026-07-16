@@ -33,7 +33,10 @@ alias vim=nvim
 alias v=nvim
 
 # Terraform
-alias t=terraform
+alias t="mise x -- terraform"
+
+# Terragrunt
+alias tg="mise x -- terragrunt"
 
 # Chezmoi
 alias c=chezmoi
@@ -119,6 +122,7 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 # Direnv
 eval "$(direnv hook bash)"
+export DIRENV_WARN_TIMEOUT=0
 
 # Use bash-completion, if available, and avoid double-sourcing
 [[ $PS1 &&

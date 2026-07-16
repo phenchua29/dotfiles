@@ -1,0 +1,5 @@
+[".local/bin/excalidraw-watch"]
+    type = "file"
+    url = "https://gist.githubusercontent.com/phenchua29/05ccbd54a47a6b5069e3e109884157f9/raw/excalidraw-watch"
+    executable = true
+    refreshPeriod = "1h"
