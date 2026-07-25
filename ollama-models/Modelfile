@@ -1,0 +1,21 @@
+FROM ./Qwen3.5-0.8B-GEC-KAZ-RUS-ENG.Q4_0.gguf
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+{{ .Response }}<|im_end|>
+"""
+
+SYSTEM """Отформатируй текст голосового ввода: расставь пунктуацию и заглавные буквы, разбей на абзацы, исправь опечатки и орфографические ошибки. Сохрани язык, слова и смысл, ничего не добавляй от себя."""
+
+PARAMETER stop "<|im_end|>"
+PARAMETER temperature 0
+PARAMETER top_k 1
+PARAMETER repeat_penalty 1.0
+PARAMETER num_ctx 2048

@@ -1,0 +1,2 @@
+[session]
+resume_agents_on_restore = false

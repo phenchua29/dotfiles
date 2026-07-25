@@ -1,0 +1,14 @@
+[Unit]
+Description=LocalAI Ollama model service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/phenchua/ollama-models/start.sh
+WorkingDirectory=/home/phenchua/ollama-models
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

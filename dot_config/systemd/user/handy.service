@@ -1,0 +1,15 @@
+[Unit]
+Description=Handy - Speech to Text
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/handy --start-hidden
+Restart=on-failure
+RestartSec=5
+Environment=DISPLAY=:1
+Environment=WAYLAND_DISPLAY=wayland-1
+
+[Install]
+WantedBy=default.target
