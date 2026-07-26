@@ -140,3 +140,9 @@ export PATH="$PATH:/home/phenchua/.lmstudio/bin"
 # Go installs
 set_path "/home/phenchua/.local/share/mise/installs/go/1.26.2/bin"
 set_path "$(go env GOPATH)/bin"
+
+# Disable jcode telemetry
+export JCODE_NO_TELEMETRY=1
+
+# Show model reasoning/thinking output in goose CLI (DeepSeek-R1, Claude, Gemini, etc.)
+export GOOSE_CLI_SHOW_THINKING=1

@@ -5,8 +5,8 @@
     "append_trailing_space": true,
     "audio_feedback": true,
     "audio_feedback_volume": 1.0,
-    "auto_submit": false,
-    "auto_submit_key": "ctrl_enter",
+    "auto_submit": true,
+    "auto_submit_key": "enter",
     "autostart_enabled": false,
     "bindings": {
       "cancel": {
@@ -42,7 +42,11 @@
       "Grok",
       "Herdr",
       "Ollama",
-      "Chezmoi"
+      "Chezmoi",
+      "Zellij",
+      "Tmux",
+      "Neovim",
+      "Vim"
     ],
     "debug_mode": false,
     "experimental_enabled": true,

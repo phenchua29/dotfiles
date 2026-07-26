@@ -98,8 +98,15 @@ providers:
     configured: true
 GOOSE_DISABLE_KEYRING: ''
 GOOSE_MODE: smart_approve
+GOOSE_MOIM_MESSAGE_TEXT: |
+  Critical guardrails:
+  - Never read files that may contain secrets. Ask for permission or guidance if it's a must.
+  - When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
+  - When doing bug fixes, always start with reproducing the bug in an E2E setting as closely aligned with how an end user would experience it.
+  - When end-to-end testing a product, be picky about the UI and be obsessed with pixel perfection.
+  - Apply a high standard to engineering excellence: lint, test failures, and test flakiness. If you see one, get it fixed.
 GOOSE_NO_CODE_TRUNCATION: true
 GOOSE_SHOW_FULL_OUTPUT: true
 SECURITY_PROMPT_ENABLED: true
 SECURITY_PROMPT_THRESHOLD: 1.0
-
+GOOSE_CLI_THEME: dark
