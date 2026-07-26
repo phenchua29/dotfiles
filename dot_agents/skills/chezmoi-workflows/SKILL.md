@@ -18,9 +18,10 @@ fix(shell): correct zsh path
 chore(nvim): update lsp config
 ```
 
-After `chezmoi re-add` (which auto-commits), amend the message:
+After `chezmoi re-add`, stage and commit:
 ```bash
-chezmoi git -- commit --amend -m "type(scope): message"
+chezmoi git -- add -A
+chezmoi git -- commit -m "type(scope): message"
 ```
 
 ---
@@ -64,8 +65,9 @@ After editing a config file, add it to chezmoi:
 ```bash
 chezmoi status                         # 1. Verify file shows as modified
 chezmoi diff ~/.zshrc                  # 2. Review changes
-chezmoi add ~/.zshrc                   # 3. Add to source (auto-commits if configured)
-chezmoi git -- commit --amend -m "type(scope): message"  # 4. Fix auto-commit message
+chezmoi add ~/.zshrc                   # 3. Add to source
+chezmoi git -- add -A                  # 4. Stage all changes in source
+chezmoi git -- commit -m "type(scope): message"  # 5. Commit with conventional message
 chezmoi git -- push                    # 5. Push to remote
 ```
 
@@ -101,9 +103,10 @@ Bulk sync all modified tracked files to remote:
 
 ```bash
 chezmoi status                         # 1. Review all drift
-chezmoi re-add                         # 2. Re-add all managed files (auto-commits)
-chezmoi git -- commit --amend -m "type(scope): message"  # 3. Fix auto-commit message
-chezmoi git -- push                    # 4. Push to remote
+chezmoi re-add                         # 2. Re-add all managed files to source
+chezmoi git -- add -A                  # 3. Stage all changes in source
+chezmoi git -- commit -m "type(scope): message"  # 4. Commit with conventional message
+chezmoi git -- push                    # 5. Push to remote
 ```
 
 ---
