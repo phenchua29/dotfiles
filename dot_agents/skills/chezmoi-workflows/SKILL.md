@@ -6,7 +6,7 @@ allowed-tools: Read, Edit, Bash
 
 # Chezmoi Workflows
 
-> **Self-Evolving Skill**: This skill improves through use. If instructions are wrong, parameters drifted, or a workaround was needed — fix this file immediately, don't defer. Only update for real, reproducible issues.
+> **Self-Evolving Skill**: This skill improves through use. If instructions are wrong, parameters drifted, or a workaround was needed - fix this file immediately, don't defer. Only update for real, reproducible issues.
 
 ## Commit Convention
 
@@ -267,12 +267,12 @@ chezmoi cat ~/.config/app/config.toml   # Show rendered output without applying
 
 ## 13. Safe Update (Diff Before Apply)
 
-Pull from remote with review step — safer than blind `chezmoi update`:
+Pull from remote with review step - safer than blind `chezmoi update`:
 
 ```bash
 chezmoi git -- pull                    # 1. Pull source changes only (no apply)
 chezmoi diff                           # 2. Review what WOULD change in home directory
-chezmoi apply --dry-run --verbose      # 3. Dry run — shows actions without executing
+chezmoi apply --dry-run --verbose      # 3. Dry run - shows actions without executing
 chezmoi apply                          # 4. Apply after review
 chezmoi status                         # 5. Confirm clean state
 ```
@@ -286,7 +286,7 @@ chezmoi status                         # 5. Confirm clean state
 Troubleshoot chezmoi setup and environment:
 
 ```bash
-chezmoi doctor                         # Full diagnostic — checks all components
+chezmoi doctor                         # Full diagnostic - checks all components
 ```
 
 **Key fields to verify**:
@@ -335,8 +335,8 @@ chezmoi doctor | grep -v "^ok"         # Show only warnings and errors
 
 After this skill completes, check before closing:
 
-1. **Did the command succeed?** — If not, fix the instruction or error table that caused the failure.
-2. **Did parameters or output change?** — If the underlying tool's interface drifted, update Usage examples and Parameters table to match.
-3. **Was a workaround needed?** — If you had to improvise (different flags, extra steps), update this SKILL.md so the next invocation doesn't need the same workaround.
+1. **Did the command succeed?** - If not, fix the instruction or error table that caused the failure.
+2. **Did parameters or output change?** - If the underlying tool's interface drifted, update Usage examples and Parameters table to match.
+3. **Was a workaround needed?** - If you had to improvise (different flags, extra steps), update this SKILL.md so the next invocation doesn't need the same workaround.
 
-Only update if the issue is real and reproducible — not speculative.
+Only update if the issue is real and reproducible - not speculative.
