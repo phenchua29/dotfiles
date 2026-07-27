@@ -1,4 +1,5 @@
 GOOSE_TELEMETRY_ENABLED: false
+GOOSE_CLI_SHOW_THINKING: "1"
 extensions:
   todo:
     enabled: true
