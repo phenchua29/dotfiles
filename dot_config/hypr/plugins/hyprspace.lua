@@ -1,2 +1,0 @@
--- Hyprspace plugin configuration.
--- hl.bind("SUPER + TAB", hl.dsp.exec_cmd("overview:toggle"))

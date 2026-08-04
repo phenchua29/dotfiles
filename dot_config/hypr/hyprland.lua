@@ -13,9 +13,6 @@ require("window-rules")
 require("xwayland-fix")
 -- require("debug") -- Just for debugging
 
--- require("plugins.hyprexpo")
-require("plugins.hyprspace")
-
 -- >>> jcode launch hotkeys (managed) >>>
 -- jcode: home
 hl.bind("SUPER + semicolon", hl.dsp.exec_cmd("/home/phenchua/.jcode/hotkey/launch_jcode_0_cmd_semicolon.sh"))
