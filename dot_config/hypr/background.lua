@@ -3,7 +3,6 @@
 local launchPrefix = "uwsm app --"
 
 local forestPineTreeRain = "linux-wallpaperengine --screen-root eDP-2 2944854639"
-local sakuraRain = "linux-wallpaperengine --screen-root eDP-2 2970331102"
 
 -- linux-wallpaperengine --screen-root eDP-2 3016047975
 -- mpvpaper eDP-2 6a41ab48117477.588f6a78d82a5_1.mp4 -o "no-audio --loop"

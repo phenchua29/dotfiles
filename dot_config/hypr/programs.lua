@@ -2,8 +2,6 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
 -- Set programs that you use.
-local terminal = "kitty"
-local fileManager = "dolphin"
 local launchPrefix = "uwsm app --"
 
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
