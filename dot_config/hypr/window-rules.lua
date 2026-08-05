@@ -14,9 +14,7 @@ hl.window_rule({
 		class = "^$",
 		title = "^$",
 		xwayland = true,
-		floating = true,
 		fullscreen = false,
-		pinned = false,
 	},
 	no_focus = true,
 })
