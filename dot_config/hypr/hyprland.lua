@@ -19,5 +19,5 @@ hl.bind("SUPER + semicolon", hl.dsp.exec_cmd("/home/phenchua/.jcode/hotkey/launc
 -- jcode: last project
 hl.bind("SUPER + apostrophe", hl.dsp.exec_cmd("/home/phenchua/.jcode/hotkey/launch_jcode_1_cmd_quote.sh"))
 -- jcode: self-dev
-hl.bind("SUPER SHIFT + apostrophe", hl.dsp.exec_cmd("/home/phenchua/.jcode/hotkey/launch_jcode_2_cmd_shift_quote.sh"))
+hl.bind("SUPER + SHIFT + apostrophe", hl.dsp.exec_cmd("/home/phenchua/.jcode/hotkey/launch_jcode_2_cmd_shift_quote.sh"))
 -- <<< jcode launch hotkeys (managed) <<<
