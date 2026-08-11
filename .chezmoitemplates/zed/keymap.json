@@ -28,6 +28,7 @@
 
       // Navigate & Search
       "space t": "project_symbols::Toggle",
+      "space p": "projects::OpenRecent",
       "space f": "file_finder::Toggle",
       "space s": "pane::DeploySearch",
 
@@ -58,7 +59,7 @@
     },
   },
   {
-    "context": "(vim_mode == normal && !Dock) || GitPanel || ProjectPanel || ProjectSearchBar || Terminal || KeyContextView",
+    "context": "(vim_mode == normal && !Dock) || AgentPanel || GitPanel || ProjectPanel || ProjectSearchBar || Terminal || KeyContextView",
     "bindings": {
       "shift-Up": "workspace::IncreaseActiveDockSize",
       "shift-Down": "workspace::DecreaseActiveDockSize",
@@ -66,6 +67,12 @@
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-l": "workspace::ActivatePaneRight",
+    },
+  },
+  {
+    "context": "AgentPanel && !MessageEditor",
+    "bindings": {
+      "space a": "agent::Toggle",
     },
   },
   {
@@ -135,11 +142,6 @@
   {
     "unbind": {
       "ctrl-p": "menu::SelectPrevious",
-    },
-  },
-  {
-    "unbind": {
-      "ctrl-shift-i": "file_finder::ToggleFilterMenu",
     },
   },
 ]
