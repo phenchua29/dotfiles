@@ -3,7 +3,9 @@ AppData
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
-.config
+.config/*
+!.config/mise/
+!.config/mise/config.toml
 .local
 .bashrc
 .tmux.conf
