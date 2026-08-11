@@ -22,21 +22,9 @@ set_path() {
 
 # ===== ALIASES =====
 
-# Allow 256 bits color tmux
-alias tmux="TERM=xterm-256color tmux"
-
-# Makes tty font bigger
-alias fontbig="setfont iso01-12x22"
-
 # vim -> neovide
 alias vim=nvim
 alias v=nvim
-
-# Terraform
-alias t="mise x -- terraform"
-
-# Terragrunt
-alias tg="mise x -- terragrunt"
 
 # Chezmoi
 alias c=chezmoi
@@ -48,6 +36,43 @@ za() {
   local session=$(zellij ls -s | fzf) || return
   [ -n "$session" ] && zellij attach "$session"
 }
+
+# Make neovim the default editor
+export EDITOR="nvim"
+export GIT_EDITOR="nvim"
+
+# pnpm
+export PNPM_HOME="~/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+# Use bash-completion, if available, and avoid double-sourcing
+[[ $PS1 &&
+  ! ${BASH_COMPLETION_VERSINFO:-} &&
+  -f /usr/share/bash-completion/bash_completion ]] &&
+    . /usr/share/bash-completion/bash_completion
+
+{{ if and (eq .chezmoi.os "linux") (not (contains "microsoft" (.chezmoi.kernel.osrelease | lower))) -}}
+# -------------------------------------
+# Config outside of WSL start
+# -------------------------------------
+
+# ===== ALIASES =====
+
+# Allow 256 bits color tmux
+alias tmux="TERM=xterm-256color tmux"
+
+# Makes tty font bigger
+alias fontbig="setfont iso01-12x22"
+
+# Terraform
+alias t="mise x -- terraform"
+
+# Terragrunt
+alias tg="mise x -- terragrunt"
 
 # ===== PATHS =====
 
@@ -64,18 +89,6 @@ set_path "$HOME/.dotnet/tools"
 
 # scrcpy
 set_path "$HOME/Downloads/scrcpy/scrcpy-linux-x86_64-v3.1"
-
-# Make neovim the default editor
-export EDITOR="nvim"
-export GIT_EDITOR="nvim"
-
-# pnpm
-export PNPM_HOME="/home/phenchua/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
 
 # Env for hinting electron apps to use wayland
 export ELECTRON_OZONE_PLATFORM_HINT=auto
@@ -102,10 +115,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 
-# Wsl config
-if grep -qi microsoft /proc/version; then
-  . "$HOME/.config/bash/wsl"
-fi
 # Mason
 set_path "$HOME/.local/share/nvim/mason/bin"
 
@@ -124,12 +133,6 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 eval "$(direnv hook bash)"
 export DIRENV_WARN_TIMEOUT=0
 
-# Use bash-completion, if available, and avoid double-sourcing
-[[ $PS1 &&
-  ! ${BASH_COMPLETION_VERSINFO:-} &&
-  -f /usr/share/bash-completion/bash_completion ]] &&
-    . /usr/share/bash-completion/bash_completion
-
 # Added by codebase-memory-mcp install
 export PATH="/home/phenchua/.local/bin:$PATH"
 
@@ -146,3 +149,21 @@ export JCODE_NO_TELEMETRY=1
 
 # Show model reasoning/thinking output in goose CLI (DeepSeek-R1, Claude, Gemini, etc.)
 export GOOSE_CLI_SHOW_THINKING=1
+
+# -------------------------------------
+# Config outside of WSL end
+# -------------------------------------
+{{- end }}
+
+{{- if and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) }}
+# -------------------------------------
+# WSL
+# -------------------------------------
+
+export PATH="$PATH:/mnt/c/Users/Admin/AppData/Roaming/Microsoft/Windows/Start Menu/Programs"
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+
+# -------------------------------------
+# WSL end
+# -------------------------------------
+{{- end }}
