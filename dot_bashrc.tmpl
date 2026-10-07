@@ -10,14 +10,22 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='\w \$ '
 
-# Function declratarion
+# Function declaration
 set_path() {
   local var_value="$1"
+  [ -z "$var_value" ] && return 0
 
-  case ":$PATH:" in
-  *":$var_value:"*) ;;
-  *) export PATH="$var_value:$PATH" ;;
-  esac
+  local new_path=""
+  local IFS=":" p
+  local -
+  set -f
+
+  for p in $PATH; do
+    [[ "$p" == "$var_value" ]] && continue
+    new_path="${new_path:+$new_path:}$p"
+  done
+
+  export PATH="$var_value${new_path:+:$new_path}"
 }
 
 # ===== ALIASES =====
@@ -73,6 +81,8 @@ alias t="mise x -- terraform"
 
 # Terragrunt
 alias tg="mise x -- terragrunt"
+# trash-cli
+alias rm='trash'
 
 # ===== PATHS =====
 
@@ -167,3 +177,9 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 # WSL end
 # -------------------------------------
 {{- end }}
+# Rustup
+set_path "$HOME/.cargo/bin"
+
+export PATH=/home/phenchua/bin:$PATH
+
+[[ -e "/home/phenchua/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/phenchua/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh"
